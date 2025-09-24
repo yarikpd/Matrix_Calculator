@@ -252,3 +252,5 @@ FodyWeavers.xsd
 *.log.*
 *.sig
 pkg/
+Doxyfile.bak
+*.bak
