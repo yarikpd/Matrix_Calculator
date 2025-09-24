@@ -111,14 +111,21 @@ Matrix matrix_from_array(const double* data, const int rows, const int cols) {
     return result;
 }
 
-double matrix_sum(const Matrix m) {
-    double total = 0.0;
+// ИНДИВИДУАЛЬНОЕ ЗАДАНИЕ: сумма всех элементов матрицы
+double matrix_sum(Matrix m) {
+    // Проверка на пустую матрицу
+    if (m.data == nullptr || m.rows <= 0 || m.cols <= 0) {
+        return 0.0;
+    }
 
+    double sum = 0.0;
+
+    // Суммируем все элементы матрицы
     for (int i = 0; i < m.rows; i++) {
         for (int j = 0; j < m.cols; j++) {
-            total += m.data[i][j];
+            sum += m.data[i][j];
         }
     }
 
-    return total;
+    return sum;
 }
